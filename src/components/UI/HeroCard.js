@@ -1,14 +1,5 @@
 import * as React from "react";
-import {
-  Grid,
-  Card,
-  CardContent,
-  CardMedia,
-  Typography,
-  CardActionArea,
-  IconButton,
-} from "@mui/material";
-import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import { Grid, Card, CardContent, CardMedia, Typography } from "@mui/material";
 
 const HeroCard = () => {
   return (
@@ -20,7 +11,6 @@ const HeroCard = () => {
       maxWidth="md"
     >
       <Card sx={{ maxWidth: 600 }}>
-        {/* <CardActionArea> */}
         <CardMedia
           component="img"
           height="140"
@@ -29,7 +19,7 @@ const HeroCard = () => {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Search For Cocktail
+            What Is Cocktail ?
           </Typography>
           <Typography variant="body2" color="text.secondary">
             A cocktail is an alcoholic mixed drink. Most commonly, cocktails are
@@ -40,7 +30,6 @@ const HeroCard = () => {
             interpretations of older and more famous cocktails.(wiki)
           </Typography>
         </CardContent>
-        {/* </CardActionArea> */}
       </Card>
     </Grid>
   );
