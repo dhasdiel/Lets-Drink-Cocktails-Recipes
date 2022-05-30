@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ThemeProvider } from "@mui/material/styles";
+import { theme } from "./theme/theme";
+
+import UpAppBar from "./components/UI/UpAppBar";
+import HeroCard from "./components/UI/HeroCard";
+import Cocktails from "./components/Cocktail/Cocktails";
+import CocktailInfo from "./components/Cocktail/CocktailInfo";
+import Footer from "./components/UI/Footer";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <UpAppBar />
+        <Routes>
+          <Route path="/" element={<HeroCard />} />
+          <Route path="/cocktail" element={<Cocktails />} />
+          <Route path="/cocktail/:strDrink" element={<CocktailInfo />} />
+        </Routes>
+        <Footer />
+      </ThemeProvider>
+    </BrowserRouter>
   );
 }
 
